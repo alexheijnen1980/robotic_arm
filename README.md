@@ -11,6 +11,8 @@
 * 1x Waveshare RS485 CAN [HAT](https://www.waveshare.com/rs485-can-hat.htm) 
 * 1x Raspberry Pi 3b
 
+![3-dof_robotic_arm](/pictures/3-DOF_robotic_arm.jpg)
+
 ### Robot Operating System
 * Mac Mini M1: [Docker image](https://hub.docker.com/r/tiryoh/ros-desktop-vnc) running ROS1 Noetic 
 * Raspberry Pi 3b: Ubuntu Mate 20.04 installation running ROS1 Noetic
