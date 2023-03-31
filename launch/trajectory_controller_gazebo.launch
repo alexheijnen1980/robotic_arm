@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+  <param name="robot_description" textfile="../urdf/leg_CAD.urdf"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model leg_CAD"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="user_gui" value="TRUE"/>
+  </node>
+
+  <node name="state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>  
+
+  <rosparam command="load" file="../config/trajectory_controller.yaml"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" args="arm_trajectory_controller"/>
+
+</launch>
